@@ -7,6 +7,7 @@ interface RifmArgs {
   replace?: (str: string) => string;
   append?: (str: string) => string;
   mask?: boolean;
+  orderBreak?: boolean;
   accept?: RegExp;
 }
 

@@ -127,16 +127,17 @@ And finaly masks - masks are usually is format with replace editing mode + some 
 
 These are accepted by the Rifm component as props and the useRifm hook as named arguments.
 
-| Prop         | type                          | default | Description                                                                                                                                                   |
-| ------------ | :---------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **accept**   | RegExp (optional)             | /\d/g   | Regular expression to detect **"accepted"** symbols                                                                                                           |
-| **format**   | string => string              |         | format function                                                                                                                                               |
-| **value**    | string                        |         | input value                                                                                                                                                   |
-| **onChange** | string => void                |         | event fired on input change                                                                                                                                   |
-| **children** | ({ value, onChange }) => Node |         | value and onChange handler you need to pass to underlying input element                                                                                       |
-| **mask**     | boolean (optional)            |         | use replace input mode if true, use cursor visual hacks if prop provided                                                                                      |
-| **replace**  | string => string (optional)   |         | format postprocessor allows you to fully replace any/all symbol/s preserving cursor                                                                           |
-| **append**   | string => string (optional)   |         | format postprocessor called only if cursor is in the last position and new symbols added, used for specific use-case to add non accepted symbol when you type |
+| Prop           | type                          | default | Description                                                                                                                                                   |
+| ------------   | :---------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **accept**     | RegExp (optional)             | /\d/g   | Regular expression to detect **"accepted"** symbols                                                                                                           |
+| **format**     | string => string              |         | format function                                                                                                                                               |
+| **value**      | string                        |         | input value                                                                                                                                                   |
+| **onChange**   | string => void                |         | event fired on input change                                                                                                                                   |
+| **children**   | ({ value, onChange }) => Node |         | value and onChange handler you need to pass to underlying input element                                                                                       |
+| **mask**       | boolean (optional)            |         | use replace input mode if true, use cursor visual hacks if prop provided                                                                                      |
+| **orderBreak** | boolean (optional)            |         | Allow format to arbitrarily change characters before selection                                                                                                |
+| **replace**    | string => string (optional)   |         | format postprocessor allows you to fully replace any/all symbol/s preserving cursor                                                                           |
+| **append**     | string => string (optional)   |         | format postprocessor called only if cursor is in the last position and new symbols added, used for specific use-case to add non accepted symbol when you type |
 
 ### Output Props
 

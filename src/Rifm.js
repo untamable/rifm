@@ -10,6 +10,7 @@ type Args = {|
   replace?: string => string,
   append?: string => string,
   accept?: RegExp,
+  orderBreak?: boolean,
 |};
 
 type RenderProps = {|
@@ -139,7 +140,8 @@ export const useRifm = (props: Args): RenderProps => {
           // You have '0|.00', then press 1, it becomes 01|.00 and after format 1.00, this breaks our assumption
           // that order of accepted symbols is not changed after format,
           // so here we don't update start position if other accepted symbols was inbetween current and new position
-          if (newCleanPos - cleanPos > 1) {
+
+          if (!props.orderBreak && newCleanPos - cleanPos > 1) {
             newPos = start;
             newCleanPos = cleanPos;
           }
